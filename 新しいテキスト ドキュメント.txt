@@ -1,9 +1,9 @@
 server {
     listen 80;
     listen [::]:80;
-    root /var/www/html/orangehrm;
-    index  index.php index.html index.htm;
-    server_name  example.com www.example.com;
+    root /var/www/html/mediawiki;
+    index index.php index.html index.htm;
+    server_name www.wikiexample.com;
 
      client_max_body_size 100M;
 
@@ -24,6 +24,5 @@ server {
          fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
          fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
          include fastcgi_params;
-         try_files $uri @rewrite;
     }
 }
